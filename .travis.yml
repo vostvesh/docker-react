@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t vostvesh/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run vostvesh/docer-react npm run test -- --coverage 
